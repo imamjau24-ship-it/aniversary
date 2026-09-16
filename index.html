@@ -379,58 +379,6 @@
       animation: fadeIn 0.5s ease;
     }
 
-    /* Coupons Grid */
-    .coupons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .coupon-card {
-      background: linear-gradient(135deg, rgba(255, 42, 109, 0.1) 0%, rgba(5, 217, 232, 0.1) 100%);
-      border: 1px dashed var(--primary-glow);
-      border-radius: 16px;
-      padding: 25px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .coupon-card:hover {
-      transform: scale(1.03);
-    }
-
-    .coupon-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .coupon-sub {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      margin-bottom: 20px;
-    }
-
-    .claim-btn {
-      background: var(--primary-glow);
-      color: #fff;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
-      transition: all 0.2s;
-    }
-
-    .claim-btn.claimed {
-      background: #10b981;
-      box-shadow: none;
-      cursor: default;
-    }
-
     /* Reveal animations */
     .reveal {
       opacity: 0;
@@ -500,9 +448,9 @@
     </div>
   </div>
 
-  <!-- BACKGROUND MUSIC -->
+  <!-- BACKGROUND MUSIC JANJI SUCI -->
   <audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112678.mp3" type="audio/mpeg">
+    <source src="janji-suci.mp3" type="audio/mpeg">
   </audio>
 
   <button class="music-btn" id="musicToggle">
@@ -558,7 +506,7 @@ Selamat tanggal 17 September 2026!
           
 Dimana di hari ini adalah tepat di hari kita jadian,
           
-Nggak terasa ya, perjalanan yang kita mulai satu tahun lalu sudah sampai di titik sekarang, dan rasa syukur aku punya kamu yang selalu sabar dalam menghadapi aku  selama ini.
+Nggak terasa ya, perjalanan yang kita mulai satu tahun lalu sudah sampai di titik sekarang, dan rasa syukur aku punya kamu yang selalu sabar dalam menghadapi aku selama ini.
 
 Terima kasih ya sayang sudah menjadi tempat ceritaku dan tempat pulangku yang paling nyaman. 
 Terima kasih sudah selalu sabar, mengerti aku, dan membuat hari-hari biasa terasa sangat luar biasa.
@@ -582,7 +530,7 @@ Aku sayang kamu hari ini, esok, dan selamanya.
         <div class="reason-card" onclick="toggleReason(this)">
           <span class="reason-icon">😊</span>
           <div class="reason-title">Kesederhanaanmu</div>
-          <div class="reason-desc">Kamu adalah wanita yang paling sederhana, tanpa meminta apa" dan beda dari yang lain dalam artian kamu adalah spesial..</div>
+          <div class="reason-desc">Kamu adalah wanita yang paling sederhana, tanpa meminta apa-apa dan beda dari yang lain dalam artian kamu adalah spesial..</div>
         </div>
 
         <div class="reason-card" onclick="toggleReason(this)">
@@ -603,7 +551,8 @@ Aku sayang kamu hari ini, esok, dan selamanya.
           <div class="reason-desc">Aku sayang kamu bukan karena hal rumit, tapi karena kamu adalah kamu. Apa adanya.</div>
         </div>
       </div>
-   
+    </section>
+
     <footer style="text-align: center; margin: 90px 0 30px; color: #6b7280; font-size: 0.85rem;">
       17 September 2026 • Semoga Langgeng dan cepat Halal ya sayang ❤️ 
     </footer>
@@ -614,7 +563,6 @@ Aku sayang kamu hari ini, esok, dan selamanya.
     document.addEventListener("DOMContentLoaded", function () {
 
       // 1. MATH GAME (LOCK SCREEN LOGIC)
-      // Generasi angka acak perkalian (2 sampai 9)
       const num1 = Math.floor(Math.random() * 8) + 2; 
       const num2 = Math.floor(Math.random() * 8) + 2; 
       const correctAnswer = num1 * num2;
@@ -634,7 +582,7 @@ Aku sayang kamu hari ini, esok, dan selamanya.
           gameFeedback.style.color = '#10b981';
           gameFeedback.innerText = 'Jawaban Benar! Membuka undangan... ❤️';
           
-          // Otomatis putar musik jika diizinkan browser
+          // Otomatis putar lagu Janji Suci saat kunci terbuka
           const music = document.getElementById('bgMusic');
           if (music) {
             music.play().then(() => {
@@ -666,8 +614,7 @@ Aku sayang kamu hari ini, esok, dan selamanya.
         }
       });
 
-      // 2. LIVE TIME COUNTER (DISESUAIKAN UNTUK 17 SEPTEMBER 2026)
-      // Mengukur perjalanan sejak 17 September 2025 sampai 17 September 2026
+      // 2. LIVE TIME COUNTER (17 SEPTEMBER 2026)
       const startDate = new Date("2025-09-17T00:00:00"); 
 
       function updateCounter() {
@@ -798,13 +745,6 @@ Aku sayang kamu hari ini, esok, dan selamanya.
       } else {
         desc.style.display = 'block';
       }
-    }
-
-    // COUPON CLAIM FUNCTION
-    function claimCoupon(btn) {
-      btn.innerText = "Berhasil Diklaim! ✓";
-      btn.classList.add('claimed');
-      btn.onclick = null;
     }
   </script>
 </body>
